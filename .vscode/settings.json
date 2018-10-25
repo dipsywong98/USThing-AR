@@ -1,0 +1,10 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".js",
+        "cmd": "cd ${workspaceRoot} && node index.js"
+      }
+    ]
+  }
+}

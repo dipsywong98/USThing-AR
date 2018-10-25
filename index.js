@@ -5,4 +5,4 @@ const obtainArJSON = require('./obtain-ar-jSON')
 
 const obtainArHTML = ()=>fs.readFileSync('./test_cases/comp_2minors.html').toString()
 
-console.log(obtainArHTML())
+console.log(obtainArJSON(obtainArHTML()))
