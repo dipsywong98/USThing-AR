@@ -4,6 +4,17 @@ const cheerio = require("cheerio");
 
 const getInnerText = (element,d=0) => {
   if (!element) return "";
+  if (element.name === 'img'){
+    if(element.attribs.src.match('PS_CS_CREDIT_TAKEN_ICN_1.gif')){
+      return 'Taken'
+    } else if (element.attribs.src.match('PS_CS_COURSE_ENROLLED_ICN_1.gif')){
+      return 'In Progress'
+    } else if(element.attribs.src.match('PS_CS_COURSE_PLANNED_ICN_1.gif')){
+      return 'Planned'
+    } else {
+      return ''
+    }
+  }
   if (!element.children) {
     if (element.type === "text") {
       return element.data;
@@ -51,11 +62,11 @@ const printTrs = (trs,x) => {
 const obtainArJSON = arHTML => {
   const $ = cheerio.load(arHTML);
   const requirementGroupTables = $(".PSGROUPBOXWBO").toArray();
-  const requirements = [
-    obtainGroupObject(requirementGroupTables[0]),
-    obtainGroupObject(requirementGroupTables[1])
-  ];
-  // const requirements = requirementGroupTables.map(obtainGroupObject);
+  // const requirements = [
+  //   obtainGroupObject(requirementGroupTables[0]),
+  //   obtainGroupObject(requirementGroupTables[1])
+  // ];
+  const requirements = requirementGroupTables.map(obtainGroupObject);
   return requirements;
 };
 
@@ -164,6 +175,8 @@ const processOverview = trs => {
   let description
   let units
   let label
+  let title
+  let courses
   trs.forEach(tr=>{
     const $ = cheerio(tr)
     const descriptionSpan = $.find('span.PSLONGEDITBOX')
@@ -172,7 +185,7 @@ const processOverview = trs => {
     }
     const unitsLi = $.find('li')
     if(unitsLi.length > 0){
-      units = getInnerText(unitsLi[0]).match(/\d+\.\d*/g)
+      units = getInnerText(unitsLi[0]).match(/\d+\.*\d*/g)
       if(units){
         units = {
           required: units[0],
@@ -186,9 +199,29 @@ const processOverview = trs => {
     if(labelTd.length > 0){
       label = getInnerText(labelTd[0])
     }
+
+    const titleTd = $.find('td.PAGROUPDIVIDER')
+    if(titleTd.length > 0){
+      title = getInnerText(titleTd[0])
+    }
+    // console.log(getInnerText(tr))
+
+    let courseTable = $.find('table.PSLEVEL4GRIDLEFTFRAME')
+    if(courseTable.length > 0){
+      courseTable = courseTable.find('table.PSLEVEL4GRIDNBO')
+      const coursesTrs = courseTable.find('tr')
+      const keys = cheerio(coursesTrs[0]).find('th').toArray().map(getInnerText)
+      courses = coursesTrs.toArray().filter(tr=>
+        getInnerText(cheerio(tr).find('td')[0]).match(/[A-Z]{4}\d+\w*/g)
+      ).map(tr=>
+        cheerio(tr).find('td').toArray().reduce((prev,currv,k)=>({
+        ...prev,
+        [keys[k]]:getInnerText(currv)
+      }),{}))
+    }
   })
-  console.log(units)
-  return {label,description,units}
+  console.log({title})
+  return {title,label,description,units,courses}
 }
 
 const processGroup = subgroupTrs => {
