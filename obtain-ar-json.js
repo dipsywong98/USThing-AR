@@ -4,7 +4,13 @@ const cheerio = require("cheerio");
 
 const getInnerText = element => {
   if(!element)return ''
-  if(!element.children && element.type==='text')return element.data
+  if(!element.children){
+    if(element.type==='text'){
+      return element.data
+    } else {
+      return ''
+    }
+  } 
   if(element.children.length ===0) return ''
   return element.children.reduce((prev,currv)=>prev+getInnerText(currv),'')
   // if(!element) return "ignored";
@@ -31,7 +37,13 @@ const obtainGroupObject = groupTable => {
   const contentTable = $.find('.PABACKGROUNDINVISIBLE')[0]
   const descriptionSpan = cheerio(contentTable).find('span.PSLONGEDITBOX')[0]
   const groupDescriptionText = getInnerText(descriptionSpan).replace(/\s+/g,' ')
-  const areaTable = cheerio(contentTable).find('table.PSLEVEL1SCROLLAREABODYNBO[id="SAA_ARSLT_RLVW$scroll$1"]').find('table')[0]
+  const areaTable = cheerio(cheerio(contentTable).find('table.PSLEVEL1SCROLLAREABODYNBO')[0]).find('tbody')[0]
+  console.log('+++++++++++++++++++++++++++++')
+  console.log(getInnerText(areaTable).replace(/\s+/g,' '))//.toString())
+  console.log('-----------------')
+  // console.log(cheerio(areaTable).toString().replace(/\s{2+}/g,'\n')) 
+  const areaTrs = cheerio(areaTable).children('tr').toArray()
+  console.log(areaTrs.reduce((prev,currv)=>prev+'\n'+getInnerText(currv).replace(/\s+/g,' '),''))
   // console.log(labelTd.children())
   return {
     label:labelText,
