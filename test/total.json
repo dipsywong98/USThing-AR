@@ -1,79 +1,75 @@
 {
-  "requirement": " University Total Credit Requirement [RG:799500]",
-  "areas": [
+  "name": "University Total Credit Requirement",
+  "rg": "799500",
+  "descriptions": [
+    "This report is only a reference on student’s study progress. It is updated in around October each year according to the Curriculum Handbook. To select the appropriate courses in order to graduate, student should read this Report along with the corresponding curriculum and consult the academic advisor.",
+    "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program.",
+    "System logics and technical issues may affect the accuracy and results of the advisement report. Some of the deficiencies in the advisement report can be settled by swapping of courses used in different requirements. Students in Year 3 or above may submit swap requests through this system: https://w5.ab.ust.hk/jsga/apply_crse_swap."
+  ],
+  "satisfied": false,
+  "criteria": [
     {
-      "name": "overview",
-      "descriptions": [
-        "This report is only a reference on student’s study progress. It is updated in around October each year according to the Curriculum Handbook. To select the appropriate courses in order to graduate, student should read this Report along with the corresponding curriculum and consult the academic advisor.",
-        "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program.",
-        "System logics and technical issues may affect the accuracy and results of the advisement report. Some of the deficiencies in the advisement report can be settled by swapping of courses used in different requirements. Students in Year 3 or above may submit swap requests through this system: https://w5.ab.ust.hk/jsga/apply_crse_swap."
-      ],
+      "name": "Courses Enrolled (including transfer credits)",
       "satisfied": false,
-      "criteria": [
+      "descriptions": [
+        "Number of units enrolled and transferred.",
+        "Please refer to the course history for details."
+      ],
+      "units": {
+        "required": 120,
+        "taken": 95,
+        "needed": 25
+      }
+    },
+    {
+      "name": "Course Used (including transfer credits) ",
+      "satisfied": true,
+      "descriptions": [
+        "Number of units used to fulfill any curriculum requirement (Common Core, School, Major, Minor, etc).",
+        "Please refer to the course history for details."
+      ],
+      "units": {
+        "required": 0,
+        "taken": 85,
+        "needed": 0
+      }
+    },
+    {
+      "name": "Other Courses (including transfer credits) ",
+      "satisfied": true,
+      "descriptions": [
+        "List of courses \"not\" used to fulfill any requirement below.",
+        "Failed courses or courses with \"pp\" grades will not be displayed below. Please refer to the course history for details."
+      ],
+      "units": {
+        "required": 0,
+        "taken": 10,
+        "needed": 0
+      },
+      "courses": [
         {
-          "name": "Courses Enrolled (including transfer credits)",
-          "satisfied": false,
-          "descriptions": [
-            "Number of units enrolled and transferred.",
-            "Please refer to the course history for details."
-          ],
-          "units": {
-            "required": 120,
-            "taken": 95,
-            "needed": 25
-          }
+          "Course": " ELEC4940A ",
+          "Description": " Independent Study ",
+          "Units": " 3.00 ",
+          "When": " 2017-18 Winter ",
+          "Grade": " A+ ",
+          "Status": " Taken "
         },
         {
-          "name": "Course Used (including transfer credits) ",
-          "satisfied": true,
-          "descriptions": [
-            "Number of units used to fulfill any curriculum requirement (Common Core, School, Major, Minor, etc).",
-            "Please refer to the course history for details."
-          ],
-          "units": {
-            "required": 0,
-            "taken": 85,
-            "needed": 0
-          }
+          "Course": " ENTR4000B ",
+          "Description": " Product Innov to Tech Startup ",
+          "Units": " 3.00 ",
+          "When": " 2016-17 Spring ",
+          "Grade": " B- ",
+          "Status": " Taken "
         },
         {
-          "name": "Other Courses (including transfer credits) ",
-          "satisfied": true,
-          "descriptions": [
-            "List of courses \"not\" used to fulfill any requirement below.",
-            "Failed courses or courses with \"pp\" grades will not be displayed below. Please refer to the course history for details."
-          ],
-          "units": {
-            "required": 0,
-            "taken": 10,
-            "needed": 0
-          },
-          "courses": [
-            {
-              "Course": " ELEC4940A ",
-              "Description": " Independent Study ",
-              "Units": " 3.00 ",
-              "When": " 2017-18 Winter ",
-              "Grade": " A+ ",
-              "Status": " Taken "
-            },
-            {
-              "Course": " ENTR4000B ",
-              "Description": " Product Innov to Tech Startup ",
-              "Units": " 3.00 ",
-              "When": " 2016-17 Spring ",
-              "Grade": " B- ",
-              "Status": " Taken "
-            },
-            {
-              "Course": " MATH2023 ",
-              "Description": " Multivariable Calculus ",
-              "Units": " 4.00 ",
-              "When": " 2017-18 Spring ",
-              "Grade": " B- ",
-              "Status": " Taken "
-            }
-          ]
+          "Course": " MATH2023 ",
+          "Description": " Multivariable Calculus ",
+          "Units": " 4.00 ",
+          "When": " 2017-18 Spring ",
+          "Grade": " B- ",
+          "Status": " Taken "
         }
       ]
     }
