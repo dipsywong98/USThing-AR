@@ -21,46 +21,5 @@ describe("true", () => {
   });
 });
 
-describe("cc", () => {
-  it("name", () => {
-    assert.equal(cc.name, cc_ans.name);
-  });
-  it("rg", () => {
-    assert.equal(cc.rg, cc_ans.rg);
-  });
-  it("satisfied", () => {
-    assert.equal(cc.satisfied, cc_ans.satisfied);
-  });
-  it("descriptions", () => {
-    assert.deepEqual(cc.descriptions, cc_ans.descriptions);
-  });
-  it("units", () => {
-    assert.deepEqual(cc.units, cc_ans.units);
-  });
-  describe("area A", () => {
-    it("name", () => {
-      assert.deepEqual(cc.areas[0].name, cc_ans.areas.name);
-    });
-    it("descriptions", () => {
-      assert.deepEqual(cc.areas[0].descriptions, cc_ans.areas.descriptions);
-    });
-    it("units", () => {
-      assert.deepEqual(cc.areas[0].units, cc_ans.areas.units);
-    });
-  });
-});
-
-describe("total", () => {
-  it("name", () => {
-    assert.equal(total.name, total_ans.name);
-  });
-  it("rg", () => {
-    assert.equal(total.rg, total_ans.rg);
-  });
-  it("satisfied", () => {
-    assert.equal(total.satisfied, total_ans.satisfied);
-  });
-  it("descriptions", () => {
-    assert.deepEqual(total.descriptions, total_ans.descriptions);
-  });
-});
+require("./cc")(cc, cc_ans);
+require("./total")(total, total_ans);
