@@ -22,6 +22,7 @@ const trim = str => str.replace(/^\s+/, "").replace(/\s+$/, "");
  */
 const getInnerText = (element, d = 0) => {
   if (!element) return "";
+  //map status icons into text
   if (element.name === "img") {
     if (element.attribs.src.match("PS_CS_CREDIT_TAKEN_ICN_1.gif")) {
       return "Taken";
@@ -122,6 +123,8 @@ const mapRequirementTable = table => {
       .toArray()
       .filter(tr => !isPlaceholderTr(tr));
     areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
+    ret = { ...areas.shift(), ...ret };
+    console.log(areas[1]);
   }
   return {
     name,
@@ -135,7 +138,7 @@ const mapRequirementTable = table => {
 
 /**
  *
- * @param {Array[cheerio]} areaTrs
+ * @param {Array[cheerio]} areaTrs table.PSLEVEL1SCROLLAREABODYNBO>tbody>tr
  * @return {Array[Array[cheerio]]}
  */
 const clusterTrsIntoAreas = areaTrs => {
@@ -154,36 +157,100 @@ const clusterTrsIntoAreas = areaTrs => {
 };
 
 /**
+ * Area is defined to be light blue sections
+ *
  * the trs have several cases:
  * 0. contain td.PAGROUPDIVIDER which is name
- * 1. contain span.PSLONGEDITBOX, which is descriptions (before see a 3)
  * 2. contain li, which is [units/ courses/ GPA] progress and requirement (before see a 3)
- * 3. contain table.PABACKGROUNDINVISIBLE which is an additional criteria
- * inside 3, it may contain table.PSLEVEL4GRIDNBO which contains all course details
+ * 1. contain span.PSLONGEDITBOX, which is descriptions (before see a 3)
+ * 3. contain table.PSLEVEL1SCROLLAREABODYNBOWBO which is an additional criteria
  *
- * @param {Array[cheerio]} trs
+ * @param {Array[cheerio]} trs table.PSLEVEL1SCROLLAREABODYNBO>tbody>tr
  */
 const mapTrsToArea = trs => {
   let processedCriteria = false;
-  let ret = {};
+  let retArea = { criteria: [] };
   trs.forEach(tr => {
-    const tableQ = $(tr).find("table.PABACKGROUNDINVISIBLE");
+    const tableQ = $(tr).find("table.PSLEVEL1SCROLLAREABODYNBOWBO");
     if (tableQ.length > 0) {
       processedCriteria = true;
+      retArea.criteria.push(mapTableToCriteria(tableQ[0]));
     } else if (!processedCriteria) {
-      const nameQ = $(tr).find("td.PAGROUPDIVIDER");
+      const areaNameQ = $(tr).find("td.PAGROUPDIVIDER");
       const spanQ = $(tr).find("span.PSLONGEDITBOX");
       const lis = $(tr).find("li");
-      if (nameQ.length > 0) {
-        ret.name = getInnerText(nameQ[0]);
-      } else if (spanQ.length > 0) {
-        ret = { ...ret, ...processDescriptions(spanQ[0]) };
+      if (areaNameQ.length > 0) {
+        retArea.name = getInnerText(areaNameQ[0]);
       } else if (lis.length > 0) {
-        ret = lis.reduce((prev, li) => ({ ...prev, ...processLi(li) }), ret);
+        retArea = lis
+          .toArray()
+          .reduce((prev, li) => ({ ...prev, ...processLi(li) }), retArea);
+      } else if (spanQ.length > 0) {
+        const descriptions = processDescriptions(spanQ[0]);
+        console.log(retArea.name, descriptions);
+        retArea = { ...retArea, ...processDescriptions(spanQ[0]) };
       }
     }
   });
-  return ret;
+  return retArea;
+};
+
+/**
+ *
+ * 2. contain li, which is [units/ courses/ GPA] progress and requirement
+ * 1. contain span.PSLONGEDITBOX, which is descriptions
+ * 3. contain table.PSLEVEL4GRIDNBO which contains course history related
+ * @param {cheerio} table table.PSLEVEL1SCROLLAREABODYNBOWBO
+ */
+const mapTableToCriteria = table => {
+  let retCriteria = {};
+  retCriteria.name = getInnerText($(table).find("a")[0]);
+  const trs = $(table)
+    .find("table.PABACKGROUNDINVISIBLE")
+    .children("tbody")
+    .children("tr")
+    .toArray()
+    .filter(tr => !isPlaceholderTr(tr));
+  trs.forEach(tr => {
+    const criteriaQ = $(tr).find("td.PAGROUPDIVIDER");
+    const spanQ = $(tr).find("span.PSLONGEDITBOX");
+    const lis = $(tr).find("li");
+    const courseTableQ = $(tr).find("table.PSLEVEL4GRIDNBO");
+    if (criteriaQ.length > 0) {
+      retCriteria.name = getInnerText(criteriaQ[0]);
+    } else if (lis.length > 0) {
+      retCriteria = lis
+        .toArray()
+        .reduce((prev, li) => ({ ...prev, ...processLi(li) }), retCriteria);
+    } else if (spanQ.length > 0) {
+      retCriteria = { ...retCriteria, ...processDescriptions(spanQ[0]) };
+    } else if (courseTableQ.length > 0) {
+      const courseTable = courseTable.find("table.PSLEVEL4GRIDNBO");
+      const coursesTrs = courseTable.find("tr");
+      const keys = cheerio(coursesTrs[0])
+        .find("th")
+        .toArray()
+        .map(getInnerText);
+      retCriteria.courses = coursesTrs
+        .toArray()
+        .filter(tr =>
+          getInnerText(cheerio(tr).find("td")[0]).match(/[A-Z]{4}\d+\w*/g)
+        )
+        .map(tr =>
+          cheerio(tr)
+            .find("td")
+            .toArray()
+            .reduce(
+              (prev, currv, k) => ({
+                ...prev,
+                [keys[k]]: getInnerText(currv)
+              }),
+              {}
+            )
+        );
+    }
+  });
+  return retCriteria;
 };
 
 /**
@@ -216,7 +283,7 @@ const processContentTbody = tbody => {
 
 /**
  *
- * @param {cheerio} span
+ * @param {cheerio} span span.PSLONGEDITBOX
  */
 const processDescriptions = span => {
   const descriptions = span.children.reduce((prev, el) => {

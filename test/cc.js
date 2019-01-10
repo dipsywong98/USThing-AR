@@ -18,13 +18,19 @@ module.exports = (cc, cc_ans) => {
     });
     describe("area A", () => {
       it("name", () => {
-        assert.deepEqual(cc.areas[0].name, cc_ans.areas.name);
+        assert.deepEqual(cc.areas[0].name, cc_ans.areas[0].name);
       });
       it("descriptions", () => {
-        assert.deepEqual(cc.areas[0].descriptions, cc_ans.areas.descriptions);
+        assert.deepEqual(
+          cc.areas[0].descriptions,
+          cc_ans.areas[0].descriptions
+        );
       });
       it("units", () => {
-        assert.deepEqual(cc.areas[0].units, cc_ans.areas.units);
+        assert.deepEqual(cc.areas[0].units, cc_ans.areas[0].units);
+      });
+      it("criteria", () => {
+        assert.deepEqual(cc.areas[0].criteria, cc_ans.areas[0].criteria);
       });
     });
   });
