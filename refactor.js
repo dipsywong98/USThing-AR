@@ -124,7 +124,6 @@ const mapRequirementTable = table => {
       .filter(tr => !isPlaceholderTr(tr));
     areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
     ret = { ...areas.shift(), ...ret };
-    console.log(areas[1]);
   }
   return {
     name,
@@ -187,7 +186,6 @@ const mapTrsToArea = trs => {
           .reduce((prev, li) => ({ ...prev, ...processLi(li) }), retArea);
       } else if (spanQ.length > 0) {
         const descriptions = processDescriptions(spanQ[0]);
-        console.log(retArea.name, descriptions);
         retArea = { ...retArea, ...processDescriptions(spanQ[0]) };
       }
     }
@@ -204,18 +202,21 @@ const mapTrsToArea = trs => {
  */
 const mapTableToCriteria = table => {
   let retCriteria = {};
-  retCriteria.name = getInnerText($(table).find("a")[0]);
+  retCriteria.name = getInnerText($(table).find("td.SSSTEXTDKBLUEBOLD10")[0]);
   const trs = $(table)
     .find("table.PABACKGROUNDINVISIBLE")
     .children("tbody")
     .children("tr")
-    .toArray()
-    .filter(tr => !isPlaceholderTr(tr));
+    .toArray();
+  // .filter(tr => !isPlaceholderTr(tr));
+  const courseTableQ = $(table).find("table.PSLEVEL4GRIDNBO");
+  if (courseTableQ.length > 0) {
+    retCriteria.courses = mapTableToCourses(courseTableQ[0]);
+  }
   trs.forEach(tr => {
     const criteriaQ = $(tr).find("td.PAGROUPDIVIDER");
     const spanQ = $(tr).find("span.PSLONGEDITBOX");
     const lis = $(tr).find("li");
-    const courseTableQ = $(tr).find("table.PSLEVEL4GRIDNBO");
     if (criteriaQ.length > 0) {
       retCriteria.name = getInnerText(criteriaQ[0]);
     } else if (lis.length > 0) {
@@ -224,33 +225,39 @@ const mapTableToCriteria = table => {
         .reduce((prev, li) => ({ ...prev, ...processLi(li) }), retCriteria);
     } else if (spanQ.length > 0) {
       retCriteria = { ...retCriteria, ...processDescriptions(spanQ[0]) };
-    } else if (courseTableQ.length > 0) {
-      const courseTable = courseTable.find("table.PSLEVEL4GRIDNBO");
-      const coursesTrs = courseTable.find("tr");
-      const keys = cheerio(coursesTrs[0])
-        .find("th")
-        .toArray()
-        .map(getInnerText);
-      retCriteria.courses = coursesTrs
-        .toArray()
-        .filter(tr =>
-          getInnerText(cheerio(tr).find("td")[0]).match(/[A-Z]{4}\d+\w*/g)
-        )
-        .map(tr =>
-          cheerio(tr)
-            .find("td")
-            .toArray()
-            .reduce(
-              (prev, currv, k) => ({
-                ...prev,
-                [keys[k]]: getInnerText(currv)
-              }),
-              {}
-            )
-        );
     }
   });
   return retCriteria;
+};
+
+/**
+ *
+ * @param {cheerio} courseTable table.PSLEVEL4GRIDNBO
+ */
+const mapTableToCourses = courseTable => {
+  const coursesTrs = $(courseTable).find("tr");
+  const keys = cheerio(coursesTrs[0])
+    .find("th")
+    .toArray()
+    .map(getInnerText)
+    .map(s => (!!s ? s.toLowerCase() : s));
+  return coursesTrs
+    .toArray()
+    .filter(tr =>
+      getInnerText(cheerio(tr).find("td")[0]).match(/[A-Z]{4}\d+\w*/g)
+    )
+    .map(tr =>
+      cheerio(tr)
+        .find("td")
+        .toArray()
+        .reduce(
+          (prev, currv, k) => ({
+            ...prev,
+            [keys[k]]: getInnerText(currv)
+          }),
+          {}
+        )
+    );
 };
 
 /**
