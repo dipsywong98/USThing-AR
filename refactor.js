@@ -127,7 +127,7 @@ const mapRequirementTable = table => {
   }
   return {
     name,
-    rg: rg && rg.match(/\d+/)[0],
+    rg: rg && Number(rg.match(/\d+/)[0]),
     satisfied,
     descriptions,
     ...ret,
@@ -253,7 +253,9 @@ const mapTableToCourses = courseTable => {
         .reduce(
           (prev, currv, k) => ({
             ...prev,
-            [keys[k]]: getInnerText(currv)
+            [keys[k]]: (keys[k] === "units" ? Number : String)(
+              getInnerText(currv)
+            )
           }),
           {}
         )

@@ -71,7 +71,9 @@
       "criteria": [
         {
           "name": "Course used to fulfill Chinese Communication Requirement",
-          "description": "List of Chinese Communication common core courses completed.",
+          "descriptions": [
+            "List of Chinese Communication common core courses completed."
+          ],
           "satisfied": true,
           "courses": [
             {
@@ -88,7 +90,7 @@
     },
     {
       "name": "Area C: Quantitative Reasoning (QR)",
-      "description": [
+      "descriptions": [
         "Requirement",
         "Students are required to complete the following number of units of common core courses.",
         "Your current status is:"
@@ -102,7 +104,7 @@
       "criteria": [
         {
           "name": "Course used to fulfill QR Requirement",
-          "description": "List of QR common core courses completed.",
+          "descriptions": ["List of QR common core courses completed."],
           "satisfied": true,
           "courses": [
             {
@@ -185,6 +187,7 @@
         "taken": 3,
         "needed": 3
       },
+      "satisfied": false,
       "criteria": [
         {
           "name": "Course used to fulfill SA SSC Requirement",
@@ -227,8 +230,8 @@
     {
       "name": "Area F: Humanities (H)",
       "descriptions": [
-        "Requirement ",
-        "Students are required to complete the following number of units of common core courses. Among them at least 3 units from School-Sponsored Courses (SSC). ",
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses. Among them at least 3 units from School-Sponsored Courses (SSC).",
         "Your current status is:"
       ],
       "units": {
@@ -236,6 +239,7 @@
         "taken": 3,
         "needed": 3
       },
+      "satisfied": false,
       "criteria": [
         {
           "name": "Course used to fulfill H SSC Requirement",
@@ -292,10 +296,11 @@
     {
       "name": "Area H: Healthy Lifestyle",
       "descriptions": [
-        "Requirement ",
-        "Students are required to complete the one-year non-credit Healthy Lifestyle course. ",
-        "Your current status is: "
+        "Requirement",
+        "Students are required to complete the one-year non-credit Healthy Lifestyle course.",
+        "Your current status is:"
       ],
+      "satisfied": true,
       "courses": {
         "required": 1,
         "taken": 1,
@@ -304,7 +309,8 @@
       "criteria": [
         {
           "name": "Healthy Lifestyle Course",
-          "descriptions": "Satisfied: List of Healthy Lifestyle common core courses.",
+          "descriptions": ["List of Healthy Lifestyle common core courses."],
+          "satisfied": true,
           "courses": [
             {
               "course": "HLTH1010",

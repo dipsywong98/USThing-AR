@@ -34,4 +34,7 @@ module.exports = (cc, cc_ans) => {
       });
     });
   });
+  it("entire", () => {
+    assert.deepEqual(cc, cc_ans);
+  });
 };
