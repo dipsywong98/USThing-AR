@@ -34,6 +34,20 @@ describe("cc", () => {
   it("descriptions", () => {
     assert.deepEqual(cc.descriptions, cc_ans.descriptions);
   });
+  it("units", () => {
+    assert.deepEqual(cc.units, cc_ans.units);
+  });
+  describe("area A", () => {
+    it("name", () => {
+      assert.deepEqual(cc.areas[0].name, cc_ans.areas.name);
+    });
+    it("descriptions", () => {
+      assert.deepEqual(cc.areas[0].descriptions, cc_ans.areas.descriptions);
+    });
+    it("units", () => {
+      assert.deepEqual(cc.areas[0].units, cc_ans.areas.units);
+    });
+  });
 });
 
 describe("total", () => {
