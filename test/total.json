@@ -1,6 +1,6 @@
 {
   "name": "University Total Credit Requirement",
-  "rg": "799500",
+  "rg": 799500,
   "descriptions": [
     "This report is only a reference on student’s study progress. It is updated in around October each year according to the Curriculum Handbook. To select the appropriate courses in order to graduate, student should read this Report along with the corresponding curriculum and consult the academic advisor.",
     "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program.",
@@ -22,11 +22,11 @@
       }
     },
     {
-      "name": "Course Used (including transfer credits) ",
+      "name": "Course Used (including transfer credits)",
       "satisfied": true,
       "descriptions": [
         "Number of units used to fulfill any curriculum requirement (Common Core, School, Major, Minor, etc).",
-        "Please refer to the course history for details."
+        "Please refer to the sections below for details."
       ],
       "units": {
         "required": 0,
@@ -35,7 +35,7 @@
       }
     },
     {
-      "name": "Other Courses (including transfer credits) ",
+      "name": "Other Courses (including transfer credits)",
       "satisfied": true,
       "descriptions": [
         "List of courses \"not\" used to fulfill any requirement below.",
@@ -48,28 +48,28 @@
       },
       "courses": [
         {
-          "Course": " ELEC4940A ",
-          "Description": " Independent Study ",
-          "Units": " 3.00 ",
-          "When": " 2017-18 Winter ",
-          "Grade": " A+ ",
-          "Status": " Taken "
+          "course": "ELEC4940A",
+          "description": "Independent Study",
+          "units": 3,
+          "when": "2017-18 Winter",
+          "grade": "A+",
+          "status": "Taken"
         },
         {
-          "Course": " ENTR4000B ",
-          "Description": " Product Innov to Tech Startup ",
-          "Units": " 3.00 ",
-          "When": " 2016-17 Spring ",
-          "Grade": " B- ",
-          "Status": " Taken "
+          "course": "ENTR4000B",
+          "description": "Product Innov to Tech Startup",
+          "units": 3,
+          "when": "2016-17 Spring",
+          "grade": "B-",
+          "status": "Taken"
         },
         {
-          "Course": " MATH2023 ",
-          "Description": " Multivariable Calculus ",
-          "Units": " 4.00 ",
-          "When": " 2017-18 Spring ",
-          "Grade": " B- ",
-          "Status": " Taken "
+          "course": "MATH2023",
+          "description": "Multivariable Calculus",
+          "units": 4,
+          "when": "2017-18 Spring",
+          "grade": "B-",
+          "status": "Taken"
         }
       ]
     }

@@ -13,5 +13,8 @@ module.exports = (total, total_ans) => {
     it("descriptions", () => {
       assert.deepEqual(total.descriptions, total_ans.descriptions);
     });
+    it("entire", () => {
+      assert.deepEqual(total, total_ans);
+    });
   });
 };

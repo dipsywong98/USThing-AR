@@ -103,17 +103,22 @@ const mapRequirementTable = table => {
     "tbody"
   )[0];
   const contentTrs = $(contentTbody).children("tr");
-  const { satisfied, descriptions } = processDescriptions(
-    $(contentTrs[1]).find("span.PSLONGEDITBOX")[0]
-  );
-  const requiredLis = $(contentTrs[2])
-    .find("li")
-    .toArray();
-  ret = requiredLis.reduce((prev, li) => ({ ...prev, ...processLi(li) }), ret);
   let areaTable = contentTrs.toArray().reduce((prev, tr) => {
     if (!!prev) return prev;
     const tableQuery = $(tr).find('table[id*="SAA_ARSLT_RLVW$scroll$"]');
-    if (tableQuery.length > 0) return tableQuery[0];
+    const spanQ = $(tr).find("span.PSLONGEDITBOX");
+    const liQ = $(tr).find("li");
+    if (tableQuery.length > 0) {
+      return tableQuery[0];
+    } else if (liQ.length > 0) {
+      const requiredLis = liQ.toArray();
+      ret = requiredLis.reduce(
+        (prev, li) => ({ ...prev, ...processLi(li) }),
+        ret
+      );
+    } else if (spanQ.length > 0) {
+      ret = { ...ret, ...processDescriptions(spanQ[0]) };
+    }
   }, null);
   let areas;
   if (!!areaTable) {
@@ -125,13 +130,11 @@ const mapRequirementTable = table => {
     areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
     ret = { ...areas.shift(), ...ret };
   }
+  if (areas.length > 0) ret.areas = areas;
   return {
     name,
     rg: rg && Number(rg.match(/\d+/)[0]),
-    satisfied,
-    descriptions,
-    ...ret,
-    areas
+    ...ret
   };
 };
 
@@ -190,6 +193,9 @@ const mapTrsToArea = trs => {
       }
     }
   });
+  if (retArea.criteria.length === 0) {
+    delete retArea.criteria;
+  }
   return retArea;
 };
 
@@ -307,6 +313,17 @@ const processDescriptions = span => {
     satisfied = false;
   } else if (satisfied === "Satisfied:") {
     satisfied = true;
+    if ($(span).find("b").length > 0) {
+      satisfied = $(span)
+        .find("b")
+        .toArray()
+        .reduce((prev, b) => {
+          if (getInnerText(b).indexOf("Not Satisfied") !== -1) {
+            return null;
+          }
+          return prev;
+        }, satisfied);
+    }
   } else {
     satisfied = null;
   }
