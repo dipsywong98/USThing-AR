@@ -1,3 +1,26 @@
 {
-  "name": "Single Count Credits Requirement (Minor)"
+  "name": "Single Count Credits Requirement (Minor)",
+  "satisfied": false,
+  "descriptions": [
+    "Out of the total credits required by the minor program, at least 9 credits should be single-counted within the minor and are not used to fulfill any other requirements for graduation except the 120-credit degree requirement.",
+    "The minimum number of credits required are as below."
+  ],
+  "programs": [
+    {
+      "name": "M(ROBO)",
+      "units": {
+        "required": 9,
+        "taken": 8,
+        "needed": 1
+      }
+    },
+    {
+      "name": "M(MATH)",
+      "units": {
+        "required": 9,
+        "taken": 10,
+        "needed": 0
+      }
+    }
+  ]
 }
