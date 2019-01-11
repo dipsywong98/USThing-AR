@@ -1,0 +1,206 @@
+{
+  "name": "Curriculum for Minor Program in Robotics",
+  "rg": 513610,
+  "satisfied": false,
+  "descriptions": [
+    "Requirement",
+    "Students are required to complete courses in the following areas.",
+    "For credit transfer, students can transfer a maximum total of 6 credits to the Minor Program.",
+    "Out of the total credits required by the minor program, at least 9 credits should be single-counted within the minor and are not used to fulfill any other requirements for graduation except the 120-credit degree requirement.",
+    "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program. This 6-credit limit does not apply to credits obtained through the credit transfer procedures of the University."
+  ],
+  "units": {
+    "required": 18,
+    "taken": 8,
+    "needed": 10
+  },
+  "areas": [
+    {
+      "name": "ROBO Core Elective",
+      "satisfied": false,
+      "descriptions": [],
+      "units": {
+        "required": 7,
+        "taken": 0,
+        "needed": 7
+      },
+      "criteria": [
+        {
+          "name": "Core Elective- COMP course",
+          "satisfied": false,
+          "descriptions": [
+            "At least one COMP course from Group A to fulfill elective requirement."
+          ],
+          "courses": {
+            "required": 1,
+            "taken": 0,
+            "needed": 1
+          },
+          "courseList": [
+            {
+              "course": "COMP1029C",
+              "description": "C Bridging Course",
+              "units": 1,
+              "when": "Fall, Winter, Spring, Summer",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "COMP2011",
+              "description": "Introduction to OOP",
+              "units": 4,
+              "when": "Fall, Spring",
+              "grade": "",
+              "status": ""
+            }
+          ]
+        },
+        {
+          "name": "Core Elective- Non-COMP course",
+          "satisfied": true,
+          "descriptions": [],
+          "courseList": [
+            {
+              "course": "ELEC3300",
+              "description": "Introduction to Embedded Sys",
+              "units": 4,
+              "when": "Fall, Spring",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "MECH2520",
+              "description": "Design & Manufacturing I",
+              "units": 3,
+              "when": "Spring",
+              "grade": "",
+              "status": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROBO Area Electives",
+      "satisfied": false,
+      "descriptions": [],
+      "criteria": [
+        {
+          "name": "ROBO Area Electives",
+          "satisfied": false,
+          "descriptions": [
+            "Subject to approval of Program office, students may request to use a PG course (e.g. ELEC 5660, COMP 5421) to substitute the elective course in this group."
+          ],
+          "courses": {
+            "required": 2,
+            "taken": 0,
+            "needed": 2
+          },
+          "courseList": [
+            {
+              "course": "COMP4211",
+              "description": "Machine Learning",
+              "units": 3,
+              "when": "No fixed pattern",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "COMP4421",
+              "description": "Image Processing",
+              "units": 3,
+              "when": "Fall",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "ELEC3200",
+              "description": "Sys Model, Analysis & Control",
+              "units": 4,
+              "when": "Fall, Spring",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "ELEC4220",
+              "description": "Intro to Robotics",
+              "units": 4,
+              "when": "Spring",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "IEDA2100E",
+              "description": "Comp in Industrial Appl",
+              "units": 3,
+              "when": "Spring",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "MECH2907",
+              "description": "Mechatronics",
+              "units": 3,
+              "when": "Spring",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "MECH3610",
+              "description": "Control Principles",
+              "units": 3,
+              "when": "Fall",
+              "grade": "",
+              "status": ""
+            },
+            {
+              "course": "MECH4710",
+              "description": "Introduction to Robotics",
+              "units": 3,
+              "when": "No fixed pattern",
+              "grade": "",
+              "status": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROBO Project",
+      "satisfied": true,
+      "descriptions": [],
+      "criteria": [
+        {
+          "name": "ROBO Project",
+          "satisfied": true,
+          "descriptions": [
+            "ENGG 4950F and ENGG 4950T may not be counted towards this requirement"
+          ],
+          "courses": {
+            "required": 1,
+            "taken": 2,
+            "needed": 0
+          },
+          "courseList": [
+            {
+              "course": "ENGG3960C",
+              "description": "Intelligent Car Racing 2018",
+              "units": 4,
+              "when": "2017-18 Summer",
+              "grade": "A",
+              "status": "Taken"
+            },
+            {
+              "course": "ENGG4950S",
+              "description": "Intelligent Car Racing 2017",
+              "units": 4,
+              "when": "2016-17 Summer",
+              "grade": "A",
+              "status": "Taken"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

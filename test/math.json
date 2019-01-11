@@ -1,0 +1,91 @@
+{
+  "name": "Curriculum for Minor Program in Mathematics",
+  "rg": 512110,
+  "satisfied": false,
+  "descriptions": [
+    "Requirement",
+    "Students are required to complete courses in the following areas.",
+    "[For 3Y students, in addition to the credits approved by the major department, a separate application for credit transfer should be submitted to the minor program office. The application should be submitted to ARR before the credits can be used to fulfill the minor program requirement.]",
+    "For credit transfer, students can transfer a maximum total of 6 credits to the minor program. Courses accepted for credit transfer must normally be at a level equivalent to courses coded above 1600.",
+    "Courses used to fulfill the requirements of Minor Program in Actuarial Mathematics cannot be reused to count towards this Minor Program. For students under the 4-year degree, at least 9 credits should be single-counted within the minor and are not used to fulfill any other requirements for graduation except the 120-credit degree requirement.",
+    "** This will only be verified near the end of your last term of study. **",
+    "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program. This 6-credit limit does not apply to credits obtained through the credit transfer procedures of the University."
+  ],
+  "criteria": [
+    {
+      "name": "Elective Courses",
+      "satisfied": false,
+      "descriptions": [
+        "Requirement",
+        "At least 6 credits must be at the 3000-level or above. Out of these 6 credits at 3000-level or above, at least 3 credits must be at the 4000-level or above.",
+        "The minimum number of credits and grade point average required are as below:"
+      ],
+      "units": {
+        "required": 18,
+        "taken": 17,
+        "needed": 1
+      },
+      "gpa": {
+        "required": 1.5,
+        "actual": 3.606
+      },
+      "courseList": [
+        {
+          "course": "MATH2111",
+          "description": "Matrix Algebra & Applications",
+          "units": 3,
+          "when": "2017-18 Fall",
+          "grade": "A-",
+          "status": "Taken"
+        },
+        {
+          "course": "MATH2411",
+          "description": "Applied Statistics",
+          "units": 4,
+          "when": "2017-18 Fall",
+          "grade": "A",
+          "status": "Taken"
+        },
+        {
+          "course": "MATH2421",
+          "description": "Probability",
+          "units": 4,
+          "when": "2017-18 Spring",
+          "grade": "B+",
+          "status": "Taken"
+        },
+        {
+          "course": "MATH3322",
+          "description": "Matrix Computation",
+          "units": 3,
+          "when": "2017-18 Spring",
+          "grade": "B+",
+          "status": "Taken"
+        },
+        {
+          "course": "MATH3343",
+          "description": "Combinatorial Analysis",
+          "units": 3,
+          "when": "2017-18 Spring",
+          "grade": "A-",
+          "status": "Taken"
+        }
+      ]
+    },
+    {
+      "name": "Elective Courses - 3000-level Verification",
+      "satisfied": true,
+      "descriptions": ["At least 6 credits must be at 3000-level or above."]
+    },
+    {
+      "name": "Elective Courses - 4000-level Verification",
+      "satisfied": false,
+      "descriptions": ["At least 3 credits must be at 4000-level or above."],
+      "units": {
+        "required": 3,
+        "taken": 0,
+        "needed": 3
+      }
+    }
+  ]
+}

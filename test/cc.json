@@ -1,0 +1,328 @@
+{
+  "name": "University Common Core Requirement",
+  "rg": 725005,
+  "descriptions": [
+    "Requirement",
+    "Common core program comprises a set of credit requirements in the following broad core areas, totalling 36 units (out of a total of 120 units for the degree program). In general, students are expected to complete the majority of the common core credits in Year 1 and Year 2.",
+    "If you are interested in a particular Common Core course, please check the official course list at the UCE website (http://uce.ust.hk).",
+    "In summary, your current status is:"
+  ],
+  "units": {
+    "required": 36,
+    "taken": 24,
+    "needed": 12
+  },
+  "satisfied": false,
+  "areas": [
+    {
+      "name": "Area A: English Communication",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses.",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 6,
+        "taken": 6,
+        "needed": 0
+      },
+      "satisfied": true,
+      "criteria": [
+        {
+          "name": "Course used to fulfill English Communication Requirement",
+          "descriptions": [
+            "List of English Communication common core courses completed."
+          ],
+          "satisfied": true,
+          "courseList": [
+            {
+              "course": "LANG1002S",
+              "description": "Eng for Univ Studies I",
+              "units": 3,
+              "when": "2016-17 Fall",
+              "grade": "B-",
+              "status": "Taken"
+            },
+            {
+              "course": "LANG1003S",
+              "description": "Eng for Univ Studies II",
+              "units": 3,
+              "when": "2016-17 Spring",
+              "grade": "B-",
+              "status": "Taken"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Area B: Chinese Communication",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses.",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 3,
+        "taken": 3,
+        "needed": 0
+      },
+      "satisfied": true,
+      "criteria": [
+        {
+          "name": "Course used to fulfill Chinese Communication Requirement",
+          "descriptions": [
+            "List of Chinese Communication common core courses completed."
+          ],
+          "satisfied": true,
+          "courseList": [
+            {
+              "course": "LANG1117P",
+              "description": "Advanced Chin Comm",
+              "units": 3,
+              "when": "2018-19 Fall",
+              "grade": "",
+              "status": "In Progress"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Area C: Quantitative Reasoning (QR)",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses.",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 3,
+        "taken": 3,
+        "needed": 0
+      },
+      "satisfied": true,
+      "criteria": [
+        {
+          "name": "Course used to fulfill QR Requirement",
+          "descriptions": ["List of QR common core courses completed."],
+          "satisfied": true,
+          "courseList": [
+            {
+              "course": "COMP1021",
+              "description": "Intro to Computer Science",
+              "units": 3,
+              "when": "2016-17 Fall",
+              "grade": "A+",
+              "status": "Taken"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Area D: Science and Technology (S&T)",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses. Among them at least 3 units from School-Sponsored Courses (SSC).",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 6,
+        "taken": 6,
+        "needed": 0
+      },
+      "satisfied": false,
+      "criteria": [
+        {
+          "name": "Course used to fulfill S&T SSC Requirement",
+          "descriptions": [
+            "Students are required to take at least 3 units from S&T SSC."
+          ],
+          "satisfied": false,
+          "units": {
+            "required": 3,
+            "taken": 0,
+            "needed": 3
+          }
+        },
+        {
+          "name": "Course used to fulfill S&T Requirement",
+          "descriptions": ["List of S&T common core courses completed."],
+          "satisfied": true,
+          "units": {
+            "required": 3,
+            "taken": 6,
+            "needed": 0
+          },
+          "courseList": [
+            {
+              "course": "ENGG1200",
+              "description": "Eng. Team Design Exp: Airship",
+              "units": 3,
+              "when": "2016-17 Fall",
+              "grade": "A+",
+              "status": "Taken"
+            },
+            {
+              "course": "PHYS1112",
+              "description": "Gen Phys I Calculus",
+              "units": 3,
+              "when": "2016-17 Fall",
+              "grade": "A",
+              "status": "Taken"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Area E: Social Analysis (SA)",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses. Among them at least 3 units from School-Sponsored Courses (SSC).",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 6,
+        "taken": 3,
+        "needed": 3
+      },
+      "satisfied": false,
+      "criteria": [
+        {
+          "name": "Course used to fulfill SA SSC Requirement",
+          "descriptions": [
+            "Students are required to take at least 3 units from SA SSC."
+          ],
+          "satisfied": true,
+          "units": {
+            "required": 3,
+            "taken": 3,
+            "needed": 0
+          },
+          "courseList": [
+            {
+              "course": "ISOM1500",
+              "description": "Insightful Decisions",
+              "units": 3,
+              "when": "2018-19 Fall",
+              "grade": "",
+              "status": "In Progress"
+            }
+          ]
+        },
+        {
+          "name": "Course used to fulfill SA Requirement",
+          "descriptions": [
+            "List of SA common core courses completed.",
+            "Students enrolled in the programs offered by the Department of Computer Science and Engineering cannot use ISOM 2030/125 to satisfy the common core requirement.",
+            "** This will only be verified near the end of your last term of study. **"
+          ],
+          "satisfied": false,
+          "units": {
+            "required": 3,
+            "taken": 0,
+            "needed": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "Area F: Humanities (H)",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of units of common core courses. Among them at least 3 units from School-Sponsored Courses (SSC).",
+        "Your current status is:"
+      ],
+      "units": {
+        "required": 6,
+        "taken": 3,
+        "needed": 3
+      },
+      "satisfied": false,
+      "criteria": [
+        {
+          "name": "Course used to fulfill H SSC Requirement",
+          "descriptions": [
+            "Students are required to take at least 3 units from H SSC."
+          ],
+          "satisfied": true,
+          "units": {
+            "required": 3,
+            "taken": 3,
+            "needed": 0
+          },
+          "courseList": [
+            {
+              "course": "HUMA1000B",
+              "description": "Ethics and Life",
+              "units": 3,
+              "when": "2018-19 Fall",
+              "grade": "",
+              "status": "In Progress"
+            }
+          ]
+        },
+        {
+          "name": "Course used to fulfill H Requirement",
+          "descriptions": ["List of H common core courses completed."],
+          "satisfied": false,
+          "units": {
+            "required": 3,
+            "taken": 0,
+            "needed": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "Area G: Core Elective (Arts / H / QR / SA / S&T)",
+      "descriptions": [
+        "Students are required to fulfill 6 credits from common core courses or excess credits in the areas Arts, Humanities, Quantitative Reasoning, Social Analysis, or Science and Technology.",
+        "Students are considered SATISFIED in this requirement if 6 credits or more are shown in the following table; OR if the overall University Common Core Requirement (4Y) is satisfied."
+      ],
+      "satisfied": null,
+      "criteria": [
+        {
+          "name": "Course used to fulfill Core Elective Requirement",
+          "descriptions": [
+            "Students are considered SATISFIED in this requirement if 6 credits or more are shown in the following table; OR if the overall University Common Core Requirement (4Y) is satisfied.",
+            "Students enrolled in the programs offered by the Department of Computer Science and Engineering cannot use ISOM 2030/125 to satisfy the common core requirement. (This will only be verified near the end of your last term of study.)"
+          ],
+          "satisfied": null
+        }
+      ]
+    },
+    {
+      "name": "Area H: Healthy Lifestyle",
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the one-year non-credit Healthy Lifestyle course.",
+        "Your current status is:"
+      ],
+      "satisfied": true,
+      "courses": {
+        "required": 1,
+        "taken": 1,
+        "needed": 0
+      },
+      "criteria": [
+        {
+          "name": "Healthy Lifestyle Course",
+          "descriptions": ["List of Healthy Lifestyle common core courses."],
+          "satisfied": true,
+          "courseList": [
+            {
+              "course": "HLTH1010",
+              "description": "Healthy Lifestyle",
+              "units": 0,
+              "when": "2016-17 Spring",
+              "grade": "P",
+              "status": "Taken"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

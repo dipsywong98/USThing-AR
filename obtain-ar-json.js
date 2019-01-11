@@ -73,8 +73,10 @@ const obtainArJSON = arHTML => {
 const obtainGroupObject = groupTable => {
   const $ = cheerio(groupTable);
   const labelTd = $.find(".PSGROUPBOXLABEL")[0];
-  const labelText = getInnerText(labelTd).replace(/\s+/g, " ");
+  const labelText = getInnerText(labelTd);
   const contentTable = $.find(".PABACKGROUNDINVISIBLE")[0];
+  const trs = cheerio(contentTable).children('tbody').children('tr')
+  console.log('yoyoyo',getInnerText(trs[2]))
   const descriptionSpan = cheerio(contentTable).find("span.PSLONGEDITBOX")[0];
   const groupDescriptionText = getInnerText(descriptionSpan).replace(
     /\s+/g,
@@ -83,32 +85,11 @@ const obtainGroupObject = groupTable => {
   const areaTable = cheerio(
     cheerio(contentTable).find("table.PSLEVEL1SCROLLAREABODYNBO")[0]
   ).find("tbody")[0];
-  // console.log('+++++++++++++++++++++++++++++')
-  // console.log(getInnerText(areaTable).replace(/\s+/g,' '))//.toString())
-  // console.log('-----------------')
-  // console.log(cheerio(areaTable).toString().replace(/\s{2+}/g,'\n'))
   const areaTrs = cheerio(areaTable)
     .children("tr")
     .toArray()
     .filter(tr => !isPlaceholderTr(tr));
-  // const filteredareaTrs = areaTrs.filter((tr)=>!isPlaceholderTr(tr))
-  // console.log(getInnerText(areaTrs[1]).replace(/\s+/g,' '))
-  // console.log('equivalent',getInnerText(areaTrs).replace(/\s+/g,' ')==getInnerText(filteredareaTrs).replace(/\s+/g,' '))
-  // console.log(areaTrs.reduce((prev,currv)=>prev+'\n'+getInnerText(currv).replace(/\s+/g,' '),''))
   const areas = clusterTrsIntoAreas(areaTrs).map(processArea);
-  // console.log(areas.map(c => c.length));
-  
-
-  // const areasWithSubgroups = areas.map(clusterAreaIntoSubgroups);
-  // console.log(areasWithSubgroups.map(c => c.map(cc => cc.length)));
-  
-  // console.log(areasWithSubgroups.reduce((prev,c)=>prev+'\n---------\n'+c.reduce((prevc,cc)=>prevc+'\n'+getInnerText(cc), ''), ''))
-  // console.log((''+cheerio(areasWithSubgroups[0][1])).replace(/                                                                                  /g,'  '))
-  
-  // const overview = processSubgroup(areasWithSubgroups[0])
-  // const areas = areasWithSubgroups.splice(1).map(processSubgroup)
-  
-  // console.log(labelTd.children())
   return {
     label: labelText,
     description: groupDescriptionText,

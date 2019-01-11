@@ -1,0 +1,77 @@
+{
+  "name": "University Total Credit Requirement",
+  "rg": 799500,
+  "descriptions": [
+    "This report is only a reference on student’s study progress. It is updated in around October each year according to the Curriculum Handbook. To select the appropriate courses in order to graduate, student should read this Report along with the corresponding curriculum and consult the academic advisor.",
+    "Students may use no more than 6 credits earned from courses offered in pure online delivery mode to satisfy the graduation requirements of a degree program.",
+    "System logics and technical issues may affect the accuracy and results of the advisement report. Some of the deficiencies in the advisement report can be settled by swapping of courses used in different requirements. Students in Year 3 or above may submit swap requests through this system: https://w5.ab.ust.hk/jsga/apply_crse_swap."
+  ],
+  "satisfied": false,
+  "criteria": [
+    {
+      "name": "Courses Enrolled (including transfer credits)",
+      "satisfied": false,
+      "descriptions": [
+        "Number of units enrolled and transferred.",
+        "Please refer to the course history for details."
+      ],
+      "units": {
+        "required": 120,
+        "taken": 95,
+        "needed": 25
+      }
+    },
+    {
+      "name": "Course Used (including transfer credits)",
+      "satisfied": true,
+      "descriptions": [
+        "Number of units used to fulfill any curriculum requirement (Common Core, School, Major, Minor, etc).",
+        "Please refer to the sections below for details."
+      ],
+      "units": {
+        "required": 0,
+        "taken": 85,
+        "needed": 0
+      }
+    },
+    {
+      "name": "Other Courses (including transfer credits)",
+      "satisfied": true,
+      "descriptions": [
+        "List of courses \"not\" used to fulfill any requirement below.",
+        "Failed courses or courses with \"pp\" grades will not be displayed below. Please refer to the course history for details."
+      ],
+      "units": {
+        "required": 0,
+        "taken": 10,
+        "needed": 0
+      },
+      "courseList": [
+        {
+          "course": "ELEC4940A",
+          "description": "Independent Study",
+          "units": 3,
+          "when": "2017-18 Winter",
+          "grade": "A+",
+          "status": "Taken"
+        },
+        {
+          "course": "ENTR4000B",
+          "description": "Product Innov to Tech Startup",
+          "units": 3,
+          "when": "2016-17 Spring",
+          "grade": "B-",
+          "status": "Taken"
+        },
+        {
+          "course": "MATH2023",
+          "description": "Multivariable Calculus",
+          "units": 4,
+          "when": "2017-18 Spring",
+          "grade": "B-",
+          "status": "Taken"
+        }
+      ]
+    }
+  ]
+}
