@@ -104,38 +104,62 @@ const mapRequirementTable = table => {
   const contentTbody = $($(table).find("table.PABACKGROUNDINVISIBLE")[0]).find(
     "tbody"
   )[0];
-  const contentTrs = $(contentTbody).children("tr");
-  let areaTable = contentTrs.toArray().reduce((prev, tr) => {
-    if (!!prev) return prev;
-    const tableQuery = $(tr).find('table[id*="SAA_ARSLT_RLVW$scroll$"]');
-    const spanQ = $(tr).find("span.PSLONGEDITBOX");
-    const liQ = $(tr).find("li");
-    if (tableQuery.length > 0) {
-      return tableQuery[0];
-    } else if (liQ.length > 0) {
-      const requiredLis = liQ.toArray();
-      ret = requiredLis.reduce(
-        (prev, li) => ({ ...prev, ...processLi(li) }),
-        ret
-      );
-    } else if (spanQ.length > 0) {
-      ret = { ...ret, ...processDescriptions(spanQ[0]) };
+
+  //if true => ordinary requirement group
+  //if false => single count requirement group
+  if ($(table).find("table.PABACKGROUNDINVISIBLE").length > 0) {
+    const contentTrs = $(contentTbody).children("tr");
+    let areaTable = contentTrs.toArray().reduce((prev, tr) => {
+      if (!!prev) return prev;
+      const tableQuery = $(tr).find('table[id*="SAA_ARSLT_RLVW$scroll$"]');
+      const spanQ = $(tr).find("span.PSLONGEDITBOX");
+      const liQ = $(tr).find("li");
+      if (tableQuery.length > 0) {
+        return tableQuery[0];
+      } else if (liQ.length > 0) {
+        const requiredLis = liQ.toArray();
+        ret = requiredLis.reduce(
+          (prev, li) => ({ ...prev, ...processLi(li) }),
+          ret
+        );
+      } else if (spanQ.length > 0) {
+        ret = { ...ret, ...processDescriptions(spanQ[0]) };
+      }
+    }, null);
+    let areas;
+    if (!!areaTable) {
+      const areaTrs = $($(areaTable).find("table.PSLEVEL1SCROLLAREABODYNBO")[0])
+        .children("tbody")
+        .children("tr")
+        .toArray()
+        .filter(tr => !isPlaceholderTr(tr));
+      areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
+      ret = { ...areas.shift(), ...ret };
+      if (areas.length > 0) ret.areas = areas;
     }
-  }, null);
-  let areas;
-  if (!!areaTable) {
-    const areaTrs = $($(areaTable).find("table.PSLEVEL1SCROLLAREABODYNBO")[0])
-      .children("tbody")
-      .children("tr")
+  } else {
+    console.log("hi");
+    const contentDiv = $(table).find("div.PSLONGEDITBOX");
+    ret.satisfied = processDescriptions(contentDiv[0]).satisfied;
+    ret.descriptions = contentDiv
+      .find("p")
       .toArray()
-      .filter(tr => !isPlaceholderTr(tr));
-    areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
-    ret = { ...areas.shift(), ...ret };
-    if (areas.length > 0) ret.areas = areas;
+      .map(el => getInnerText(el));
+    ret.programs = contentDiv
+      .find("ul")
+      .toArray()
+      .map(ul => ({
+        name: getInnerText(
+          $(ul)
+            .prev()
+            .prev()[0]
+        ),
+        ...processLi(ul)
+      }));
   }
+  if (rg) ret.rg = Number(rg.match(/\d+/)[0]);
   return {
     name,
-    rg: rg && Number(rg.match(/\d+/)[0]),
     ...ret
   };
 };
