@@ -9,9 +9,13 @@ const json = obtainArJSON(obtainArHTML());
 
 // console.log(json);
 
+const english = json[2];
 const cc = json[1];
 const total = json[0];
 
+const english_ans = JSON.parse(
+  fs.readFileSync("./test/english.json").toString()
+);
 const cc_ans = JSON.parse(fs.readFileSync("./test/cc.json").toString());
 const total_ans = JSON.parse(fs.readFileSync("./test/total.json").toString());
 
@@ -23,3 +27,8 @@ describe("true", () => {
 
 require("./cc")(cc, cc_ans);
 require("./total")(total, total_ans);
+describe("english", () => {
+  it("all", () => {
+    assert.deepEqual(english, english_ans);
+  });
+});

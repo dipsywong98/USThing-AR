@@ -80,11 +80,13 @@ const isPlaceholderTr = tr => {
 const main = arHTML => {
   $ = cheerio.load(arHTML);
   const requirementTables = $(".PSGROUPBOXWBO").toArray();
-  const requirements = [
-    mapRequirementTable(requirementTables[0]),
-    mapRequirementTable(requirementTables[1])
-  ];
-  // const requirements = requirementTables.map(mapRequirementTable);
+  // const requirements = [
+  //   mapRequirementTable(requirementTables[0]),
+  //   mapRequirementTable(requirementTables[1]),
+  //   mapRequirementTable(requirementTables[2]),
+  //   mapRequirementTable(requirementTables[3])
+  // ];
+  const requirements = requirementTables.map(mapRequirementTable);
   return requirements;
 };
 
@@ -129,8 +131,8 @@ const mapRequirementTable = table => {
       .filter(tr => !isPlaceholderTr(tr));
     areas = clusterTrsIntoAreas(areaTrs).map(mapTrsToArea);
     ret = { ...areas.shift(), ...ret };
+    if (areas.length > 0) ret.areas = areas;
   }
-  if (areas.length > 0) ret.areas = areas;
   return {
     name,
     rg: rg && Number(rg.match(/\d+/)[0]),
@@ -217,7 +219,7 @@ const mapTableToCriteria = table => {
   // .filter(tr => !isPlaceholderTr(tr));
   const courseTableQ = $(table).find("table.PSLEVEL4GRIDNBO");
   if (courseTableQ.length > 0) {
-    retCriteria.courses = mapTableToCourses(courseTableQ[0]);
+    retCriteria.courseList = mapTableToCourses(courseTableQ[0]);
   }
   trs.forEach(tr => {
     const criteriaQ = $(tr).find("td.PAGROUPDIVIDER");

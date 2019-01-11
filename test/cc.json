@@ -34,7 +34,7 @@
             "List of English Communication common core courses completed."
           ],
           "satisfied": true,
-          "courses": [
+          "courseList": [
             {
               "course": "LANG1002S",
               "description": "Eng for Univ Studies I",
@@ -75,7 +75,7 @@
             "List of Chinese Communication common core courses completed."
           ],
           "satisfied": true,
-          "courses": [
+          "courseList": [
             {
               "course": "LANG1117P",
               "description": "Advanced Chin Comm",
@@ -106,7 +106,7 @@
           "name": "Course used to fulfill QR Requirement",
           "descriptions": ["List of QR common core courses completed."],
           "satisfied": true,
-          "courses": [
+          "courseList": [
             {
               "course": "COMP1021",
               "description": "Intro to Computer Science",
@@ -154,7 +154,7 @@
             "taken": 6,
             "needed": 0
           },
-          "courses": [
+          "courseList": [
             {
               "course": "ENGG1200",
               "description": "Eng. Team Design Exp: Airship",
@@ -200,7 +200,7 @@
             "taken": 3,
             "needed": 0
           },
-          "courses": [
+          "courseList": [
             {
               "course": "ISOM1500",
               "description": "Insightful Decisions",
@@ -252,7 +252,7 @@
             "taken": 3,
             "needed": 0
           },
-          "courses": [
+          "courseList": [
             {
               "course": "HUMA1000B",
               "description": "Ethics and Life",
@@ -311,7 +311,7 @@
           "name": "Healthy Lifestyle Course",
           "descriptions": ["List of Healthy Lifestyle common core courses."],
           "satisfied": true,
-          "courses": [
+          "courseList": [
             {
               "course": "HLTH1010",
               "description": "Healthy Lifestyle",

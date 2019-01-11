@@ -1,0 +1,104 @@
+{
+  "name": "University English Requirement",
+  "rg": 725105,
+  "satisfied": false,
+  "descriptions": [
+    "Requirement",
+    "Students are expected to complete 12 credits in English language - six credits through required English courses in the University Common Core, and another six through courses approved for the English language requirement.",
+    "If you are interested in a particular course from the following list, please check the official course list at Center for Language Education website (http://lc.ust.hk) to confirm its latest status."
+  ],
+  "areas": [
+    {
+      "criteria": [
+        {
+          "name": "English in the Core Curriculum",
+          "courseList": [
+            {
+              "course": "LANG1002S",
+              "description": "Eng for Univ Studies I",
+              "units": 3,
+              "when": "2016-17 Fall",
+              "grade": "B-",
+              "status": "Taken"
+            },
+            {
+              "course": "LANG1003S",
+              "description": "Eng for Univ Studies II",
+              "units": 3,
+              "when": "2016-17 Spring",
+              "grade": "B-",
+              "status": "Taken"
+            }
+          ],
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of units of courses.",
+            "Your current status is:"
+          ],
+          "units": {
+            "required": 6,
+            "taken": 6,
+            "needed": 0
+          }
+        },
+        {
+          "name": "School-based English",
+          "courseList": [
+            {
+              "course": "LANG2030",
+              "description": "Tech Com I",
+              "units": 3,
+              "when": "2017-18 Fall",
+              "grade": "B-",
+              "status": "Taken"
+            }
+          ],
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following course.",
+            "Your current status is:"
+          ],
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          }
+        },
+        {
+          "name": "Department-based English",
+          "courseList": [
+            {
+              "course": "LANG4030",
+              "description": "Tech Comm II for CSE & CPEG",
+              "units": 3,
+              "when": "Fall, Spring",
+              "grade": "",
+              "status": ""
+            }
+          ],
+          "satisfied": false,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following course.",
+            "Your current status is:"
+          ],
+          "courses": {
+            "required": 1,
+            "taken": 0,
+            "needed": 1
+          }
+        }
+      ],
+      "name": "University English Requirement",
+      "satisfied": false,
+      "descriptions": ["Requirement"],
+      "units": {
+        "required": 12,
+        "taken": 9,
+        "needed": 3
+      }
+    }
+  ]
+}

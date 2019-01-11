@@ -46,7 +46,7 @@
         "taken": 10,
         "needed": 0
       },
-      "courses": [
+      "courseList": [
         {
           "course": "ELEC4940A",
           "description": "Independent Study",

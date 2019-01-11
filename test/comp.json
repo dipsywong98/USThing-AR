@@ -1,0 +1,372 @@
+{
+  "name": "Major in Computer Science (BEng) (2016-17)",
+  "rg": 533178,
+  "satisfied": false,
+  "descriptions": [
+    "Program Requirements",
+    "Students are required to complete courses in the following areas.",
+    "Some courses can be used to fulfill both Major and University Common Core Requirements. Students may reuse a maximum of 6 credits to count towards both Requirements.",
+    "Student may opt to graduate with or without an option. Students who take an option MUST complete all requirements specified in addition to the major requirements."
+  ],
+  "areas": [
+    {
+      "criteria": [
+        {
+          "name": "COMP Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "Required Course",
+          "courses": {
+            "required": 2,
+            "taken": 2,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete ALL of the following courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "ENGG Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following course.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "CHEM / LIFS / PHYS Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "MATH Course: Option A",
+          "courses": {
+            "required": 2,
+            "taken": 2,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to take MATH 1012 / 1013 / 1023 AND MATH 1014 / 1024.",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "Engineering Introduction Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "(If the students take an introduction course included in their major, this course can be counted towards their major requirement.)",
+            "Your current status is:"
+          ]
+        }
+      ],
+      "name": "COMP Engineering Fundamental Course",
+      "satisfied": true,
+      "descriptions": [
+        "Requirement (COMP)",
+        "Students are required to complete the following Engineering Fundamental Courses.",
+        "For MATH Course, students may opt for",
+        "Option A: (MATH 1013 / MATH 1023) and (MATH 1014 / MATH 1024)",
+        "Option B: MATH 1020"
+      ]
+    },
+    {
+      "criteria": [
+        {
+          "name": "Required Course",
+          "courses": {
+            "required": 4,
+            "taken": 2,
+            "needed": 2
+          },
+          "satisfied": false,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete ALL of the following courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "ENGG Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course Option B: COMP 2012H",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following course.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course II",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course III",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course IV",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course V (For Students not taking Researcher Option)",
+          "courses": {
+            "required": 1,
+            "taken": 0,
+            "needed": 1
+          },
+          "satisfied": false,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses. Students taking the Researcher option should complete COMP4981H.",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "COMP Course VI",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to take COMP 4900 for every regular term in which they are in residency at HKUST with major in COMP.",
+            "** This will only be verified near the end of your last term of study. **",
+            "Your current status is:"
+          ]
+        },
+        {
+          "name": "ELEC / IELM / MATH Course",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of courses.",
+            "Your current status is:"
+          ]
+        }
+      ],
+      "name": "COMP Required Course",
+      "satisfied": false,
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following required courses.",
+        "For COMP Course, students may opt for",
+        "Option A: COMP 2011 + COMP 2012",
+        "Option B: COMP 2012H"
+      ]
+    },
+    {
+      "criteria": [
+        {
+          "name": "Area (A): Artificial Intelligence / Theory",
+          "courses": {
+            "required": 0,
+            "taken": 0,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement:",
+            "Students may or may not select this area. If chosen, student must take at least THREE elective courses from this area and at least TWO electives from outside that area.",
+            "Your current status is (only applicable for students selected this area):"
+          ]
+        },
+        {
+          "name": "Area (B): Graphic / Multimedia",
+          "courses": {
+            "required": 0,
+            "taken": 0,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement:",
+            "Students may or may not select this area. If chosen, student must take at least THREE elective courses from this area and at least TWO electives from outside that area.",
+            "Your current status is (only applicable for students selected this area):"
+          ]
+        },
+        {
+          "name": "Area (C): Software / Database",
+          "courses": {
+            "required": 0,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement:",
+            "Students may or may not select this area. If chosen, student must take at least THREE elective courses from this area and at least TWO electives from outside that area.",
+            "Your current status is (only applicable for students selected this area):"
+          ]
+        },
+        {
+          "name": "Area (D): Systems / Networking",
+          "courses": {
+            "required": 0,
+            "taken": 0,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement:",
+            "Students may or may not select this area. If chosen, student must take at least THREE elective courses from this area and at least TWO electives from outside that area.",
+            "Your current status is (only applicable for students selected this area):"
+          ]
+        }
+      ],
+      "name": "COMP Elective I",
+      "satisfied": false,
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following number of courses. Students must take 5 courses from the specified elective list, of which at least 3 courses should be taken from 1 area and at least 2 courses outside that area."
+      ],
+      "units": {
+        "required": 15,
+        "taken": 3,
+        "needed": 12
+      },
+      "courses": {
+        "required": 5,
+        "taken": 1,
+        "needed": 4
+      }
+    },
+    {
+      "name": "Verification I: THREE courses taken from an area",
+      "satisfied": false,
+      "descriptions": ["Students must take THREE courses from an area."]
+    },
+    {
+      "name": "Verification IIa: TWO other courses taken in another single area",
+      "satisfied": false,
+      "descriptions": ["Students must either fulfill verification IIa OR IIb."]
+    },
+    {
+      "name": "Verification IIb: TWO other courses taken in two other areas",
+      "satisfied": false,
+      "descriptions": ["Students must either fulfill verification IIa OR IIb."]
+    },
+    {
+      "criteria": [
+        {
+          "name": "COMP Elective",
+          "courses": {
+            "required": 1,
+            "taken": 1,
+            "needed": 0
+          },
+          "satisfied": true,
+          "descriptions": [
+            "Requirement",
+            "Students are required to complete the following number of units of courses.",
+            "Your current status is:"
+          ],
+          "units": {
+            "required": 3,
+            "taken": 3,
+            "needed": 0
+          }
+        }
+      ],
+      "name": "COMP Elective II",
+      "satisfied": true,
+      "descriptions": [
+        "Requirement",
+        "Students are required to complete the following elective courses."
+      ]
+    }
+  ]
+}

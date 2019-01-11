@@ -33,8 +33,8 @@ module.exports = (cc, cc_ans) => {
         assert.deepEqual(cc.areas[0].criteria, cc_ans.areas[0].criteria);
       });
     });
-  });
-  it("entire", () => {
-    assert.deepEqual(cc, cc_ans);
+    it("entire", () => {
+      assert.deepEqual(cc, cc_ans);
+    });
   });
 };
