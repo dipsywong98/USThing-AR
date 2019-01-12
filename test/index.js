@@ -1,5 +1,5 @@
 const assert = require("assert");
-const obtainArJSON = require("../refactor");
+const obtainArJSON = require("../src");
 const fs = require("fs");
 
 const path = "./test_cases/dipsy.html";

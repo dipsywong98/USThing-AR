@@ -138,7 +138,6 @@ const mapRequirementTable = table => {
       if (areas.length > 0) ret.areas = areas;
     }
   } else {
-    console.log("hi");
     const contentDiv = $(table).find("div.PSLONGEDITBOX");
     ret.satisfied = processDescriptions(contentDiv[0]).satisfied;
     ret.descriptions = contentDiv
